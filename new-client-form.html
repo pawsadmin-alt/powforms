@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Client Registration Form</title>
+    <!-- Use Tailwind CSS for easy styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Use Inter font for a clean, modern look -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+    </style>
+    <!--
+        This meta tag tells search engines NOT to index this page.
+        This prevents it from showing up in search results.
+    -->
+    <meta name="robots" content="noindex">
+</head>
+<body class="flex items-center justify-center min-h-screen">
+
+    <div class="bg-white p-8 md:p-12 rounded-2xl shadow-xl max-w-3xl w-full m-4">
+        <h1 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-2">New Client Registration Form</h1>
+        <p class="text-center text-gray-500 mb-8">Please fill out this form completely. All fields with a red asterisk (*) are required.</p>
+
+        <!--
+            This is the core form element.
+            The 'action' attribute is where the form data will be sent.
+            The `action` has been preserved from your last edit.
+        -->
+        <form id="contact-form" action="https://formspree.io/f/mldlqpbb" method="POST" class="space-y-8">
+
+            <!-- Client Information Section -->
+            <div class="space-y-6">
+                <h2 class="text-2xl font-semibold text-gray-800 border-b pb-2">Client Information</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <!-- Owner's Full Name -->
+                    <div>
+                        <label for="owner_full_name" class="block text-sm font-medium text-gray-700">Owner's Full Name <span class="text-red-500">*</span></label>
+                        <input type="text" name="owner_full_name" id="owner_full_name" required
+                            class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                    </div>
+                    <!-- Co-Owner's Full Name -->
+                    <div>
+                        <label for="co_owner_full_name" class="block text-sm font-medium text-gray-700">Co-Owner's Full Name (if applicable)</label>
+                        <input type="text" name="co_owner_full_name" id="co_owner_full_name"
+                            class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                    </div>
+                </div>
+                <!-- Street Address -->
+                <div>
+                    <label for="street_address" class="block text-sm font-medium text-gray-700">Street Address (where pet's will be seen) <span class="text-red-500">*</span></label>
+                    <input type="text" name="street_address" id="street_address" required
+                           class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <div>
+                        <label for="city" class="block text-sm font-medium text-gray-700">City <span class="text-red-500">*</span></label>
+                        <input type="text" name="city" id="city" required
+                               class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                    </div>
+                    <div>
+                        <label for="state" class="block text-sm font-medium text-gray-700">State <span class="text-red-500">*</span></label>
+                        <input type="text" name="state" id="state" required
+                               class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                    </div>
+                    <div>
+                        <label for="zip_code" class="block text-sm font-medium text-gray-700">Zip Code <span class="text-red-500">*</span></label>
+                        <input type="text" name="zip_code" id="zip_code" required
+                               class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                    </div>
+                </div>
+                <!-- Billing Address -->
+                <div>
+                    <label for="billing_address" class="block text-sm font-medium text-gray-700">Billing Address (if different)</label>
+                    <input type="text" name="billing_address" id="billing_address"
+                           class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <div>
+                        <label for="billing_city" class="block text-sm font-medium text-gray-700">City</label>
+                        <input type="text" name="billing_city" id="billing_city"
+                               class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                    </div>
+                    <div>
+                        <label for="billing_state" class="block text-sm font-medium text-gray-700">State</label>
+                        <input type="text" name="billing_state" id="billing_state"
+                               class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                    </div>
+                    <div>
+                        <label for="billing_zip_code" class="block text-sm font-medium text-gray-700">Zip Code</label>
+                        <input type="text" name="billing_zip_code" id="billing_zip_code"
+                               class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label for="primary_phone" class="block text-sm font-medium text-gray-700">Primary Phone <span class="text-red-500">*</span></label>
+                        <input type="tel" name="primary_phone" id="primary_phone" required
+                               class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                        <div class="mt-2 space-x-4 flex">
+                            <label><input type="radio" name="primary_phone_type" value="Cell" class="mr-1">Cell</label>
+                            <label><input type="radio" name="primary_phone_type" value="Home" class="mr-1">Home</label>
+                            <label><input type="radio" name="primary_phone_type" value="Work" class="mr-1">Work</label>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="secondary_phone" class="block text-sm font-medium text-gray-700">Secondary Phone</label>
+                        <input type="tel" name="secondary_phone" id="secondary_phone"
+                               class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                        <div class="mt-2 space-x-4 flex">
+                            <label><input type="radio" name="secondary_phone_type" value="Cell" class="mr-1">Cell</label>
+                            <label><input type="radio" name="secondary_phone_type" value="Home" class="mr-1">Home</label>
+                            <label><input type="radio" name="secondary_phone_type" value="Work" class="mr-1">Work</label>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-700">Email Address <span class="text-red-500">*</span></label>
+                    <input type="email" name="email" id="email" required
+                           class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                </div>
+                <div>
+                    <label for="authorized_agents" class="block text-sm font-medium text-gray-700">Name of Any Authorized Agents</label>
+                    <input type="text" name="authorized_agents" id="authorized_agents"
+                           class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                </div>
+            </div>
+
+            <!-- Emergency Contact Section -->
+            <div class="space-y-6">
+                <h2 class="text-2xl font-semibold text-gray-800 border-b pb-2">Emergency Contact</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label for="emergency_name" class="block text-sm font-medium text-gray-700">Name</label>
+                        <input type="text" name="emergency_name" id="emergency_name"
+                               class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                    </div>
+                    <div>
+                        <label for="emergency_relationship" class="block text-sm font-medium text-gray-700">Relationship</label>
+                        <input type="text" name="emergency_relationship" id="emergency_relationship"
+                               class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                    </div>
+                </div>
+                <div>
+                    <label for="emergency_phone" class="block text-sm font-medium text-gray-700">Phone Number</label>
+                    <input type="tel" name="emergency_phone" id="emergency_phone"
+                           class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                </div>
+            </div>
+
+            <!-- Patient Information Section (Up to 4 pets) -->
+            <div class="space-y-8">
+                <h2 class="text-2xl font-semibold text-gray-800 border-b pb-2">Patient Information</h2>
+                <!-- Pet 1 -->
+                <div class="space-y-4 border border-gray-200 rounded-md p-4">
+                    <h3 class="text-xl font-medium text-gray-700">Pet 1</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label for="pet1_name" class="block text-sm font-medium text-gray-700">Pet's Name <span class="text-red-500">*</span></label>
+                            <input type="text" name="pet1_name" id="pet1_name" required
+                                class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                        </div>
+                        <div>
+                            <label for="pet1_species" class="block text-sm font-medium text-gray-700">Species <span class="text-red-500">*</span></label>
+                            <input type="text" name="pet1_species" id="pet1_species" required
+                                class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label for="pet1_breed" class="block text-sm font-medium text-gray-700">Breed <span class="text-red-500">*</span></label>
+                            <input type="text" name="pet1_breed" id="pet1_breed" required
+                                class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                        </div>
+                        <div>
+                            <label for="pet1_dob" class="block text-sm font-medium text-gray-700">Date of Birth (or approximate) <span class="text-red-500">*</span></label>
+                            <input type="date" name="pet1_dob" id="pet1_dob" required
+                                class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700">Sex <span class="text-red-500">*</span></label>
+                            <div class="mt-2 space-x-4 flex">
+                                <label><input type="radio" name="pet1_sex" value="Male" class="mr-1" required>Male</label>
+                                <label><input type="radio" name="pet1_sex" value="Female" class="mr-1" required>Female</label>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700">Spayed/Neutered <span class="text-red-500">*</span></label>
+                            <div class="mt-2 space-x-4 flex">
+                                <label><input type="radio" name="pet1_spayed" value="Yes" class="mr-1" required>Yes</label>
+                                <label><input type="radio" name="pet1_spayed" value="No" class="mr-1" required>No</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="pet1_color" class="block text-sm font-medium text-gray-700">Color/Markings</label>
+                        <input type="text" name="pet1_color" id="pet1_color"
+                               class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700">Is this pet microchipped? <span class="text-red-500">*</span></label>
+                            <div class="mt-2 space-x-4 flex">
+                                <label><input type="radio" name="pet1_microchipped" value="Yes" class="mr-1" required>Yes</label>
+                                <label><input type="radio" name="pet1_microchipped" value="No" class="mr-1" required>No</label>
+                            </div>
+                        </div>
+                        <div>
+                            <label for="pet1_microchip_number" class="block text-sm font-medium text-gray-700">Microchip Number (if known)</label>
+                            <input type="text" name="pet1_microchip_number" id="pet1_microchip_number"
+                                class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="pet1_allergies" class="block text-sm font-medium text-gray-700">Any known allergies?</label>
+                        <textarea name="pet1_allergies" id="pet1_allergies" rows="2"
+                                  class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"></textarea>
+                    </div>
+                    <div>
+                        <label for="pet1_medical_conditions" class="block text-sm font-medium text-gray-700">Known medical conditions or chronic issues?</label>
+                        <textarea name="pet1_medical_conditions" id="pet1_medical_conditions" rows="2"
+                                  class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"></textarea>
+                    </div>
+                </div>
+
+                <!-- Pet 2 (Repeat of Pet 1) -->
+                <div class="space-y-4 border border-gray-200 rounded-md p-4">
+                    <h3 class="text-xl font-medium text-gray-700">Pet 2 (leave blank if not applicable)</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label for="pet2_name" class="block text-sm font-medium text-gray-700">Pet's Name</label>
+                            <input type="text" name="pet2_name" id="pet2_name"
+                                   class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                        </div>
+                        <div>
+                            <label for="pet2_species" class="block text-sm font-medium text-gray-700">Species</label>
+                            <input type="text" name="pet2_species" id="pet2_species"
+                                   class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label for="pet2_breed" class="block text-sm font-medium text-gray-700">Breed</label>
+                            <input type="text" name="pet2_breed" id="pet2_breed"
+                                   class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                        </div>
+                        <div>
+                            <label for="pet2_dob" class="block text-sm font-medium text-gray-700">Date of Birth (or approximate)</label>
+                            <input type="date" name="pet2_dob" id="pet2_dob"
+                                   class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700">Sex</label>
+                            <div class="mt-2 space-x-4 flex">
+                                <label><input type="radio" name="pet2_sex" value="Male" class="mr-1">Male</label>
+                                <label><input type="radio" name="pet2_sex" value="Female" class="mr-1">Female</label>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700">Spayed/Neutered</label>
+                            <div class="mt-2 space-x-4 flex">
+                                <label><input type="radio" name="pet2_spayed" value="Yes" class="mr-1">Yes</label>
+                                <label><input type="radio" name="pet2_spayed" value="No" class="mr-1">No</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="pet2_color" class="block text-sm font-medium text-gray-700">Color/Markings</label>
+                        <input type="text" name="pet2_color" id="pet2_color"
+                               class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700">Is this pet microchipped?</label>
+                            <div class="mt-2 space-x-4 flex">
+                                <label><input type="radio" name="pet2_microchipped" value="Yes" class="mr-1">Yes</label>
+                                <label><input type="radio" name="pet2_microchipped" value="No" class="mr-1">No</label>
+                            </div>
+                        </div>
+                        <div>
+                            <label for="pet2_microchip_number" class="block text-sm font-medium text-gray-700">Microchip Number (if known)</label>
+                            <input type="text" name="pet2_microchip_number" id="pet2_microchip_number"
+                                class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="pet2_allergies" class="block text-sm font-medium text-gray-700">Any known allergies?</label>
+                        <textarea name="pet2_allergies" id="pet2_allergies" rows="2"
+                                  class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"></textarea>
+                    </div>
+                    <div>
+                        <label for="pet2_medical_conditions" class="block text-sm font-medium text-gray-700">Known medical conditions or chronic issues?</label>
+                        <textarea name="pet2_medical_conditions" id="pet2_medical_conditions" rows="2"
+                                  class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"></textarea>
+                    </div>
+                </div>
+
+                <!-- Pet 3 (Repeat of Pet 1) -->
+                <div class="space-y-4 border border-gray-200 rounded-md p-4">
+                    <h3 class="text-xl font-medium text-gray-700">Pet 3 (leave blank if not applicable)</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label for="pet3_name" class="block text-sm font-medium text-gray-700">Pet's Name</label>
+                            <input type="text" name="pet3_name" id="pet3_name"
+                                   class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                        </div>
+                        <div>
+                            <label for="pet3_species" class="block text-sm font-medium text-gray-700">Species</label>
+                            <input type="text" name="pet3_species" id="pet3_species"
+                                   class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label for="pet3_breed" class="block text-sm font-medium text-gray-700">Breed</label>
+                            <input type="text" name="pet3_breed" id="pet3_breed"
+                                   class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                        </div>
+                        <div>
+                            <label for="pet3_dob" class="block text-sm font-medium text-gray-700">Date of Birth (or approximate)</label>
+                            <input type="date" name="pet3_dob" id="pet3_dob"
+                                   class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700">Sex</label>
+                            <div class="mt-2 space-x-4 flex">
+                                <label><input type="radio" name="pet3_sex" value="Male" class="mr-1">Male</label>
+                                <label><input type="radio" name="pet3_sex" value="Female" class="mr-1">Female</label>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700">Spayed/Neutered</label>
+                            <div class="mt-2 space-x-4 flex">
+                                <label><input type="radio" name="pet3_spayed" value="Yes" class="mr-1">Yes</label>
+                                <label><input type="radio" name="pet3_spayed" value="No" class="mr-1">No</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="pet3_color" class="block text-sm font-medium text-gray-700">Color/Markings</label>
+                        <input type="text" name="pet3_color" id="pet3_color"
+                               class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700">Is this pet microchipped?</label>
+                            <div class="mt-2 space-x-4 flex">
+                                <label><input type="radio" name="pet3_microchipped" value="Yes" class="mr-1">Yes</label>
+                                <label><input type="radio" name="pet3_microchipped" value="No" class="mr-1">No</label>
+                            </div>
+                        </div>
+                        <div>
+                            <label for="pet3_microchip_number" class="block text-sm font-medium text-gray-700">Microchip Number (if known)</label>
+                            <input type="text" name="pet3_microchip_number" id="pet3_microchip_number"
+                                class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="pet3_allergies" class="block text-sm font-medium text-gray-700">Any known allergies?</label>
+                        <textarea name="pet3_allergies" id="pet3_allergies" rows="2"
+                                  class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"></textarea>
+                    </div>
+                    <div>
+                        <label for="pet3_medical_conditions" class="block text-sm font-medium text-gray-700">Known medical conditions or chronic issues?</label>
+                        <textarea name="pet3_medical_conditions" id="pet3_medical_conditions" rows="2"
+                                  class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"></textarea>
+                    </div>
+                </div>
+                
+                <!-- Pet 4 (Repeat of Pet 1) -->
+                <div class="space-y-4 border border-gray-200 rounded-md p-4">
+                    <h3 class="text-xl font-medium text-gray-700">Pet 4 (leave blank if not applicable)</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label for="pet4_name" class="block text-sm font-medium text-gray-700">Pet's Name</label>
+                            <input type="text" name="pet4_name" id="pet4_name"
+                                   class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                        </div>
+                        <div>
+                            <label for="pet4_species" class="block text-sm font-medium text-gray-700">Species</label>
+                            <input type="text" name="pet4_species" id="pet4_species"
+                                   class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label for="pet4_breed" class="block text-sm font-medium text-gray-700">Breed</label>
+                            <input type="text" name="pet4_breed" id="pet4_breed"
+                                   class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                        </div>
+                        <div>
+                            <label for="pet4_dob" class="block text-sm font-medium text-gray-700">Date of Birth (or approximate)</label>
+                            <input type="date" name="pet4_dob" id="pet4_dob"
+                                   class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700">Sex</label>
+                            <div class="mt-2 space-x-4 flex">
+                                <label><input type="radio" name="pet4_sex" value="Male" class="mr-1">Male</label>
+                                <label><input type="radio" name="pet4_sex" value="Female" class="mr-1">Female</label>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700">Spayed/Neutered</label>
+                            <div class="mt-2 space-x-4 flex">
+                                <label><input type="radio" name="pet4_spayed" value="Yes" class="mr-1">Yes</label>
+                                <label><input type="radio" name="pet4_spayed" value="No" class="mr-1">No</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="pet4_color" class="block text-sm font-medium text-gray-700">Color/Markings</label>
+                        <input type="text" name="pet4_color" id="pet4_color"
+                               class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700">Is this pet microchipped?</label>
+                            <div class="mt-2 space-x-4 flex">
+                                <label><input type="radio" name="pet4_microchipped" value="Yes" class="mr-1">Yes</label>
+                                <label><input type="radio" name="pet4_microchipped" value="No" class="mr-1">No</label>
+                            </div>
+                        </div>
+                        <div>
+                            <label for="pet4_microchip_number" class="block text-sm font-medium text-gray-700">Microchip Number (if known)</label>
+                            <input type="text" name="pet4_microchip_number" id="pet4_microchip_number"
+                                class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="pet4_allergies" class="block text-sm font-medium text-gray-700">Any known allergies?</label>
+                        <textarea name="pet4_allergies" id="pet4_allergies" rows="2"
+                                  class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"></textarea>
+                    </div>
+                    <div>
+                        <label for="pet4_medical_conditions" class="block text-sm font-medium text-gray-700">Known medical conditions or chronic issues?</label>
+                        <textarea name="pet4_medical_conditions" id="pet4_medical_conditions" rows="2"
+                                  class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Previous Veterinary Clinic Information Section -->
+            <div class="space-y-6">
+                <h2 class="text-2xl font-semibold text-gray-800 border-b pb-2">Previous Veterinary Clinic Information</h2>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Has your pet been to another veterinarian in the past?</label>
+                    <div class="mt-2 space-x-4 flex">
+                        <label><input type="radio" name="previous_vet" value="Yes" class="mr-1">Yes</label>
+                        <label><input type="radio" name="previous_vet" value="No" class="mr-1">No</label>
+                        <label><input type="radio" name="previous_vet" value="I Don’t Know" class="mr-1">I Don’t Know</label>
+                    </div>
+                </div>
+                <p class="text-sm text-gray-600 border-l-4 border-gray-400 pl-4">To ensure continuity of care, please provide us with the information for your pet's previous veterinary clinic(s). This will allow us to request their medical records.</p>
+                <div>
+                    <label for="clinic_name" class="block text-sm font-medium text-gray-700">Clinic Name</label>
+                    <input type="text" name="clinic_name" id="clinic_name"
+                           class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                </div>
+                <div>
+                    <label for="clinic_address" class="block text-sm font-medium text-gray-700">Clinic Address</label>
+                    <input type="text" name="clinic_address" id="clinic_address"
+                           class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                </div>
+                <div>
+                    <label for="clinic_phone" class="block text-sm font-medium text-gray-700">Clinic Phone Number</label>
+                    <input type="tel" name="clinic_phone" id="clinic_phone"
+                           class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                </div>
+                <p class="text-sm text-red-600 font-semibold border-l-4 border-red-400 pl-4">
+                    **previous veterinary records are necessary prior to your pet’s appointment. if we are unable to attain these prior to appointment we may reserve the right to require repeat vaccination or reschedule your appointment. Our staff will be unable to wait on these records during a pet’s appointment. All associated travel and cancellation fees will apply.
+                </p>
+            </div>
+
+            <!-- Pet Owner's Bill of Rights Section -->
+            <div class="space-y-6 text-gray-700">
+                <h2 class="text-2xl font-semibold text-gray-800 border-b pb-2">Pet Owner's Bill of Rights</h2>
+                <p>As a client of our mobile veterinary clinic, you and your pet have the following rights:</p>
+                <ul class="list-disc list-inside space-y-2">
+                    <li><strong>The Right to Compassionate and Respectful Care:</strong> You have the right to expect that your pet will be treated with compassion, dignity, and respect at all times. Our staff will treat your pet as if it were our own.</li>
+                    <li><strong>The Right to Professional and Competent Service:</strong> You have the right to expect that our veterinarians and staff are licensed, qualified, and will provide the highest standard of professional care as they are able to. If we are unable to, you have the right to be referred to a higher level of care.</li>
+                    <li><strong>The Right to Information and Informed Consent:</strong> You have the right to be fully informed about your pet's health status, including a diagnosis (if possible), the purpose of recommended procedures or treatments, and any associated risks or costs. You have the right to ask questions and have them answered in a way you can understand. We will not perform any non-emergency procedures or treatments without your informed consent.</li>
+                    <li><strong>The Right to a Clear Treatment Plan and Cost Estimate:</strong> Before any significant procedure or treatment, you have the right to a clear explanation of the proposed treatment plan and a reasonable estimate of the costs involved. We will inform you of any changes to the plan or costs as they arise.</li>
+                    <li><strong>The Right to Confidentiality and Privacy:</strong> All information regarding you and your pet's medical history will be kept confidential and will not be released to any third party without your explicit consent, except as required by law.</li>
+                    <li><strong>The Right to Access Medical Records:</strong> You have the right to request and receive copies of your pet's medical records in a timely manner. We will assist you in transferring these records to another veterinarian upon your request.</li>
+                    <li><strong>The Right to a Safe and Hygienic Environment:</strong> You have the right to expect that our mobile clinic will arrive in a clean, sanitized, and professional condition. We are committed to maintaining a sterile and safe environment to minimize the risk of infection.</li>
+                    <li><strong>The Right to Voice Concerns:</strong> You have the right to voice your concerns or complaints regarding our services. We take all feedback seriously and are committed to resolving issues promptly and fairly. However, all communication must be respectful and in accordance with our Zero Tolerance Policy for Abuse of Staff.</li>
+                </ul>
+                <p>By choosing our mobile veterinary clinic, you entrust us with the care of your beloved pet. We honor that trust and are dedicated to upholding these rights in every interaction.</p>
+            </div>
+
+            <!-- General Policies and Disclosures Section -->
+            <div class="space-y-6 text-gray-700">
+                <h2 class="text-2xl font-semibold text-gray-800 border-b pb-2">General Policies and Disclosures</h2>
+                <ul class="list-disc list-inside space-y-2">
+                    <li>You acknowledge that you are the lawful owner of the pets listed above and able to make veterinary medical decisions for these pets. The person present at the visit is responsible for these decisions and relaying information to parties not present.</li>
+                    <li>You understand that the State of Tennessee legally requires rabies vaccination in all pets above 16 weeks of age and that the State of Tennessee does not provide medical waivers and does not recognize titers in lieu of vaccination. Paws on Wheels may require rabies vaccination before providing further services during an appointment due to this law.</li>
+                    <li>You acknowledge that medical improvement cannot be guaranteed with or without treatment.</li>
+                    <li>You acknowledge that declining veterinary services including treatment, vaccination, diagnostics, and referral may contribute to a degradation of prognosis.</li>
+                    <li>You acknowledge that the State of Tennessee requires a valid Veterinary-Client-Patient Relationship (VCPR) to be maintained for veterinary advice to be rendered and prescription medications to be prescribed or dispensed. Paws on Wheels defines a valid VCPR as a physical exam being performed, documented, and paid for within the past 12 months.</li>
+                    <li>You acknowledge that refusing to see certain veterinarians may impede complete and appropriate care of your pet.</li>
+                    <li>Paws on Wheels will provide you with an estimated time window of arrival. Failure to be present at the listed address on your pet’s account within 15 minutes after the arrival of Paws on Wheels at this address will result in your appointment being documented as a no show/no call. All no show/no calls are subject to the travel fee and a $50 no show fee, both of which must be paid prior to any future scheduling. Future appointments may incur a $50 deposit prior to booking.</li>
+                    <li>Paws on Wheels cannot guarantee a same day appointment. You acknowledge that same day appointments may be referred to another practice or may incur extra charges at the discretion of the staff. You acknowledge that Paws on Wheels is by appointment only and cannot accommodate emergencies.</li>
+                    <li>Cancellation within 24 hrs of your pet’s appointment may incur a $35 cancellation fee that must be paid before rescheduling or future booking.</li>
+                    <li>You understand that our staff record appointments and phone calls at all times for purposes of training and scribing.</li>
+                    <li>You will not attempt to contact staff outside of working hours and means unless you have received express permission from that staff member or have a prior standing relationship with said staff member. The staff member determines the appropriateness of interactions outside of clinical hours.</li>
+                    <li>New clients may be asked to pay a $50 deposit at time of booking. This deposit will be applied to the balance of the account during the first visit and will be forfeit in the event of no show/no call.</li>
+                </ul>
+            </div>
+
+            <!-- Aggressive Animal Policy Section -->
+            <div class="space-y-6 text-gray-700">
+                <h2 class="text-2xl font-semibold text-gray-800 border-b pb-2">Aggressive Animal Policy</h2>
+                <ul class="list-disc list-inside space-y-2">
+                    <li>Paws on Wheels is not able to safely work with animals that need high levels of restraint or injectable sedation for veterinary visits.</li>
+                    <li>By signing this agreement, you understand that if a pet, regardless of previous experience, requires a high level of restraint or injectable sedation as determined by the veterinarian present during the visit, your visit will be discontinued. All associated travel and performed services charges will be due, even if visit is discontinued, at time of service/visit.</li>
+                    <li>You understand that Paws on Wheels, for safety reasons, do not do behavioral euthanasia at this time.</li>
+                    <li>Owner acknowledges that the supervising veterinarian will determine what is necessary and appropriate restraint. This includes utilization of muzzles, rescheduling with oral premedication, and cat restraint devices. Objections to use of these may result in discontinuation of your appointment and/or discontinuation of VCPR with Paws on Wheels.</li>
+                    <li>You acknowledge that Paws on Wheels cannot recommend or allow an owner to restrain their animal. If owner attempts to despite this, they risk minor and severe injury. You agree that if you do not follow this requirement, you will not hold Paws on Wheels liable for any injury or illness that results.</li>
+                    <li>All behavioral notes will be recorded in the veterinary record.</li>
+                </ul>
+            </div>
+
+            <!-- Force Majeure Clause -->
+            <div class="space-y-6 text-gray-700">
+                <h2 class="text-2xl font-semibold text-gray-800 border-b pb-2">Force Majeure Clause</h2>
+                <p><strong>Section 1: Force Majeure Events</strong></p>
+                <p>The performance of our services may be suspended or delayed without liability to you in the event of any unforeseen circumstances beyond our reasonable control (a “Force Majeure Event”). Such events include, but are not limited to:</p>
+                <ul class="list-disc list-inside space-y-2">
+                    <li><strong>Natural Disasters:</strong> Fires, floods, earthquakes, hurricanes, or other acts of God.</li>
+                    <li><strong>Weather and Road Conditions:</strong> Severe weather (e.g., blizzards, ice storms, heavy rain) that makes travel unsafe or impossible, as well as significant road closures, accidents, or other public safety issues.</li>
+                    <li><strong>Public Health Emergencies:</strong> Epidemics, pandemics, quarantines, or other public health crises that restrict movement or create health risks for our staff.</li>
+                    <li><strong>Governmental Actions:</strong> Acts of government, including changes in law, curfews, or mandatory closures.</li>
+                    <li><strong>Civil Unrest:</strong> Riots, strikes, lockouts, or other civil disturbances.</li>
+                    <li><strong>Vehicle Malfunctions:</strong> Unexpected and severe mechanical failure of our mobile veterinary unit.</li>
+                </ul>
+                <p><strong>Section 2: Notification and Mitigation</strong></p>
+                <p>In the event of a Force Majeure Event, we will make reasonable efforts to notify you as soon as possible and reschedule your appointment without penalty. We will also take reasonable steps to mitigate the impact of the event and resume normal operations as soon as it is safe and practical to do so.</p>
+                <p><strong>Section 3: Termination</strong></p>
+                <p>If a Force Majeure Event persists for an extended period, rendering the delivery of services impractical or impossible, we reserve the right to terminate our agreement with you without liability. In such a case, any prepaid fees for services not yet rendered will be refunded.</p>
+            </div>
+
+            <!-- Zero Tolerance Policy Section -->
+            <div class="space-y-6 text-gray-700">
+                <h2 class="text-2xl font-semibold text-gray-800 border-b pb-2">Zero Tolerance Policy: Respectful and Safe Environment</h2>
+                <p>We are committed to providing a safe, respectful, and professional environment for our staff and clients. We have a zero-tolerance policy for any form of verbal, emotional, or physical abuse directed towards our employees. This includes, but is not limited to:</p>
+                <ul class="list-disc list-inside space-y-2">
+                    <li><strong>Verbal Abuse:</strong> Yelling, threats, offensive language, or any form of harassment.</li>
+                    <li><strong>Intimidation:</strong> Aggressive gestures, threatening behavior, or any actions intended to intimidate or frighten our staff.</li>
+                    <li><strong>Physical Abuse:</strong> Any form of physical violence, assault, or unwanted physical contact.</li>
+                    <li><strong>Cyberbullying and Defamation:</strong> Sending derogatory emails, making harassing phone calls, or posting offensive, false, or malicious comments about our staff on social media, review sites, or any other online platform. This includes any actions that may harm the reputation of our employees or our business.</li>
+                </ul>
+                <p>We believe that our staff deserves to work in a safe environment, free from fear and intimidation. Our employees are dedicated professionals who are here to provide the best possible care for your pet. They are not to be subjected to abusive behavior under any circumstances.</p>
+                <p><strong>Consequences of Policy Violation:</strong></p>
+                <p>Any client who violates this policy will have their appointment discontinued during the visit regardless of condition of pet and record of the event will be documented in the medical record. You will be later contacted by management for payment of any outstanding balances and determination of how you would like your records forwarded. Depending on the severity of the incident, we reserve the right to:</p>
+                <ul class="list-disc list-inside space-y-2">
+                    <li>Refuse future service to the client and their pets.</li>
+                    <li>Report the incident to the appropriate authorities, including law enforcement.</li>
+                    <li>Pursue legal action for damages caused by defamation or other harmful actions.</li>
+                </ul>
+                <p>We appreciate your cooperation in helping us maintain a respectful and safe environment for everyone.</p>
+            </div>
+            
+            <!-- Financial Policy and Consent Section -->
+            <div class="space-y-6 text-gray-700">
+                <h2 class="text-2xl font-semibold text-gray-800 border-b pb-2">Financial Policy and Consent</h2>
+                <ul class="list-disc list-inside space-y-2">
+                    <li>Payment is due at the time services are rendered. We accept cash, credit cards, and debit cards.</li>
+                    <li>Failure to pay any balance, fees, or deposits may result in a pause of care or discontinuation of further care.</li>
+                    <li>Failure to make timely payments for services rendered may result in your account being referred to a third-party collections agency. We will make every effort to communicate with you regarding outstanding balances, but should these attempts be unsuccessful, this action may be taken. Furthermore, we reserve the right to pursue any other available legal remedies to collect the debt.</li>
+                    <li>By signing below, you authorize our mobile veterinary service to treat your pet. You agree to assume financial responsibility for all services provided.</li>
+                    <li>You understand that we do not provide radiology services, emergency services, hospitalization services, or surgery services. I understand that Paws on Wheels have referral relationships with clinics that I can access these services upon request.</li>
+                    <li>You also acknowledge that in a veterinary medical emergency, you may be referred to a stationary emergency veterinary hospital.</li>
+                </ul>
+                <div class="space-y-4 text-sm">
+                    <p>If your pet is in need of urgent care evaluation, radiology services, surgery services, hospitalization, or sedation, you may request a referral to Sparta Road Veterinary Clinic (931-668-2393). Paws on Wheels is not an entity of Sparta Road Veterinary Clinic and cannot guarantee timeline of scheduling or pricing or services provided.</p>
+                    <p>If your pet is in need of emergency care or same day urgent care, you can contact or be referred to Veterinary Emergency Group (615-257-5160). Paws on Wheels is not an entity of Veterinary Emergency Group and cannot guarantee timeline of scheduling or pricing or services provided.</p>
+                    <p>You are not required to utilize either of these clinics to maintain a relationship with Paws on Wheels.</p>
+                </div>
+            </div>
+
+            <!-- Consent Checkboxes -->
+            <div class="space-y-4 pt-6">
+                <div>
+                    <label class="flex items-center text-gray-700">
+                        <input type="checkbox" name="agreement_consent" required class="mr-2 h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                        I have read and understand the above provisions and agree to the provisions of the above client agreement. <span class="text-red-500">*</span>
+                    </label>
+                </div>
+                <div>
+                    <label class="flex items-center text-gray-700">
+                        <input type="checkbox" name="information_correct_consent" required class="mr-2 h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                        The information above is correct and complete to the best of my knowledge and ability. <span class="text-red-500">*</span>
+                    </label>
+                </div>
+                <div>
+                    <label class="flex items-center text-gray-700">
+                        <input type="checkbox" name="records_consent" class="mr-2 h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                        I consent to Paws on Wheels sharing my information with referral veterinary clinics and clinics requesting my veterinary records (not consenting will require you to provide verbal or written consent every time a request for records is made)
+                    </label>
+                </div>
+                <div>
+                    <label class="flex items-center text-gray-700">
+                        <input type="checkbox" name="social_media_consent" class="mr-2 h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                        I consent to pictures of my pet and my pet’s name being used on Paws on Wheels social media accounts and on Paws on Wheels website (not required).
+                    </label>
+                </div>
+            </div>
+            
+            <!-- Signature Section -->
+            <div class="space-y-6 pt-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label for="printed_name" class="block text-sm font-medium text-gray-700">Printed Name <span class="text-red-500">*</span></label>
+                        <input type="text" name="printed_name" id="printed_name" required
+                               class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                    </div>
+                    <div>
+                        <label for="signature" class="block text-sm font-medium text-gray-700">Signature <span class="text-red-500">*</span></label>
+                        <input type="text" name="signature" id="signature" required
+                               class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                    </div>
+                </div>
+                <div>
+                    <label for="date" class="block text-sm font-medium text-gray-700">Date <span class="text-red-500">*</span></label>
+                    <input type="date" name="date" id="date" required
+                           class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                </div>
+            </div>
+
+            <!-- Formspree hidden field to prevent redirect and show a success message -->
+            <input type="hidden" name="_next" value="?success=true">
+
+            <!-- Submit Button -->
+            <div>
+                <button type="submit"
+                        class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-150 ease-in-out">
+                    Submit Registration
+                </button>
+            </div>
+        </form>
+
+        <!-- Success Message container -->
+        <div id="success-message" class="mt-6 p-4 bg-green-100 text-green-700 rounded-md hidden">
+            <p class="text-center font-medium">Thank you! Your form has been submitted.</p>
+        </div>
+    </div>
+
+    <!-- JavaScript to handle the success message -->
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const params = new URLSearchParams(window.location.search);
+            if (params.get('success') === 'true') {
+                document.getElementById('contact-form').style.display = 'none';
+                document.getElementById('success-message').style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>
