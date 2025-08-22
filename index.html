@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sparta Road Client Referral Form</title>
+    <!-- Use Tailwind CSS for easy styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Use Inter font for a clean, modern look -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+    </style>
+    <!--
+        This meta tag tells search engines NOT to index this page.
+        This prevents it from showing up in search results.
+    -->
+    <meta name="robots" content="noindex">
+</head>
+<body class="flex items-center justify-center min-h-screen">
+
+    <div class="bg-white p-8 md:p-12 rounded-2xl shadow-xl max-w-2xl w-full m-4">
+        <h1 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-2">Sparta Road Client Referral Form</h1>
+        <p class="text-center text-gray-500 mb-8">Please fill out this form completely. All fields with a red asterisk (*) are required.</p>
+
+        <!--
+            This is the core form element.
+            The 'action' attribute is where the form data will be sent.
+            You must replace 'your-form-id' with the unique ID you get from Formspree.
+            The 'method' attribute tells the form to use a POST request to send data.
+        -->
+        <form id="contact-form" action="https://formspree.io/f/xovlgngy" method="POST" class="space-y-8">
+
+            <!-- Client Information Section -->
+            <div class="space-y-6">
+                <h2 class="text-2xl font-semibold text-gray-800 border-b pb-2">Client Information</h2>
+                <!-- Client First and Last Name -->
+                <div>
+                    <label for="client_name" class="block text-sm font-medium text-gray-700">Client First and Last Name <span class="text-red-500">*</span></label>
+                    <input type="text" name="client_name" id="client_name" required
+                           class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                </div>
+                <!-- Contact Number & Alternative Number -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label for="contact_number" class="block text-sm font-medium text-gray-700">Contact Number <span class="text-red-500">*</span></label>
+                        <input type="tel" name="contact_number" id="contact_number" required
+                               class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                    </div>
+                    <div>
+                        <label for="alternative_number" class="block text-sm font-medium text-gray-700">Alternative Number</label>
+                        <input type="tel" name="alternative_number" id="alternative_number"
+                               class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                    </div>
+                </div>
+                <!-- Home Address -->
+                <div>
+                    <label for="home_address" class="block text-sm font-medium text-gray-700">Home Address <span class="text-red-500">*</span></label>
+                    <input type="text" name="home_address" id="home_address" required
+                           class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                </div>
+                <!-- Email Address -->
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-700">Email Address <span class="text-red-500">*</span></label>
+                    <input type="email" name="email" id="email" required
+                           class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                </div>
+            </div>
+
+            <!-- Pet Information Section -->
+            <div class="space-y-6">
+                <h2 class="text-2xl font-semibold text-gray-800 border-b pb-2">Pet Information</h2>
+                <!-- First Pet -->
+                <div class="space-y-4 border border-gray-200 rounded-md p-4">
+                    <h3 class="text-xl font-medium text-gray-700">Pet 1</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label for="pet1_name" class="block text-sm font-medium text-gray-700">Name of Pet <span class="text-red-500">*</span></label>
+                            <input type="text" name="pet1_name" id="pet1_name" required
+                                   class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                        </div>
+                        <div>
+                            <label for="pet1_species" class="block text-sm font-medium text-gray-700">Species <span class="text-red-500">*</span></label>
+                            <select name="pet1_species" id="pet1_species" required
+                                    class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                                <option value="">Select</option>
+                                <option value="Canine">Canine</option>
+                                <option value="Feline">Feline</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label for="pet1_breed" class="block text-sm font-medium text-gray-700">Breed <span class="text-red-500">*</span></label>
+                            <input type="text" name="pet1_breed" id="pet1_breed" required
+                                   class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                        </div>
+                        <div>
+                            <label for="pet1_age" class="block text-sm font-medium text-gray-700">Approximate Age <span class="text-red-500">*</span></label>
+                            <input type="text" name="pet1_age" id="pet1_age" required
+                                   class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label for="pet1_rabies_status" class="block text-sm font-medium text-gray-700">Up to Date on Rabies? <span class="text-red-500">*</span></label>
+                            <select name="pet1_rabies_status" id="pet1_rabies_status" required
+                                    class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                                <option value="">Select</option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="pet1_rabies_due" class="block text-sm font-medium text-gray-700">If yes, Date Due</label>
+                            <input type="date" name="pet1_rabies_due" id="pet1_rabies_due"
+                                   class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Pet Section (2nd Pet) -->
+                <div class="space-y-4 border border-gray-200 rounded-md p-4">
+                    <h3 class="text-xl font-medium text-gray-700">Additional Pet 2</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label for="pet2_name" class="block text-sm font-medium text-gray-700">Name of Pet</label>
+                            <input type="text" name="pet2_name" id="pet2_name"
+                                   class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                        </div>
+                        <div>
+                            <label for="pet2_species" class="block text-sm font-medium text-gray-700">Species</label>
+                            <select name="pet2_species" id="pet2_species"
+                                    class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                                <option value="">Select</option>
+                                <option value="Canine">Canine</option>
+                                <option value="Feline">Feline</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label for="pet2_breed" class="block text-sm font-medium text-gray-700">Breed</label>
+                            <input type="text" name="pet2_breed" id="pet2_breed"
+                                   class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                        </div>
+                        <div>
+                            <label for="pet2_age" class="block text-sm font-medium text-gray-700">Approximate Age</label>
+                            <input type="text" name="pet2_age" id="pet2_age"
+                                   class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label for="pet2_rabies_status" class="block text-sm font-medium text-gray-700">Up to Date on Rabies?</label>
+                            <select name="pet2_rabies_status" id="pet2_rabies_status"
+                                    class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                                <option value="">Select</option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="pet2_rabies_due" class="block text-sm font-medium text-gray-700">If yes, Date Due</label>
+                            <input type="date" name="pet2_rabies_due" id="pet2_rabies_due"
+                                   class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Pet Section (3rd Pet) -->
+                <div class="space-y-4 border border-gray-200 rounded-md p-4">
+                    <h3 class="text-xl font-medium text-gray-700">Additional Pet 3</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label for="pet3_name" class="block text-sm font-medium text-gray-700">Name of Pet</label>
+                            <input type="text" name="pet3_name" id="pet3_name"
+                                   class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                        </div>
+                        <div>
+                            <label for="pet3_species" class="block text-sm font-medium text-gray-700">Species</label>
+                            <select name="pet3_species" id="pet3_species"
+                                    class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                                <option value="">Select</option>
+                                <option value="Canine">Canine</option>
+                                <option value="Feline">Feline</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label for="pet3_breed" class="block text-sm font-medium text-gray-700">Breed</label>
+                            <input type="text" name="pet3_breed" id="pet3_breed"
+                                   class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                        </div>
+                        <div>
+                            <label for="pet3_age" class="block text-sm font-medium text-gray-700">Approximate Age</label>
+                            <input type="text" name="pet3_age" id="pet3_age"
+                                   class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label for="pet3_rabies_status" class="block text-sm font-medium text-gray-700">Up to Date on Rabies?</label>
+                            <select name="pet3_rabies_status" id="pet3_rabies_status"
+                                    class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                                <option value="">Select</option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="pet3_rabies_due" class="block text-sm font-medium text-gray-700">If yes, Date Due</label>
+                            <input type="date" name="pet3_rabies_due" id="pet3_rabies_due"
+                                   class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Referral Information Section -->
+            <div class="space-y-6">
+                <h2 class="text-2xl font-semibold text-gray-800 border-b pb-2">Referral Information</h2>
+                <!-- Referral Reason -->
+                <div>
+                    <label for="referral_reason" class="block text-sm font-medium text-gray-700">Being referred for: <span class="text-red-500">*</span></label>
+                    <select name="referral_reason" id="referral_reason" required
+                            class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                        <option value="">Select</option>
+                        <option value="Euthanasia">Euthanasia</option>
+                        <option value="Hospice Consultation">Hospice Consultation</option>
+                        <option value="Wellness Care">Wellness Care</option>
+                        <option value="Other">Other (please list below)</option>
+                    </select>
+                </div>
+                <!-- If other, please specify -->
+                <div>
+                    <label for="other_reason" class="block text-sm font-medium text-gray-700">If other, please specify:</label>
+                    <input type="text" name="other_reason" id="other_reason"
+                           class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                </div>
+                <!-- Important Information -->
+                <div>
+                    <label for="important_information" class="block text-sm font-medium text-gray-700">Any important information to share with Paws on Wheels?</label>
+                    <textarea name="important_information" id="important_information" rows="6"
+                              class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"></textarea>
+                </div>
+            </div>
+
+            <!-- Referral Writer Section -->
+            <div class="space-y-6">
+                <h2 class="text-2xl font-semibold text-gray-800 border-b pb-2">Referral Writer</h2>
+                <div>
+                    <label for="referral_writer_name" class="block text-sm font-medium text-gray-700">Name writing the referral (to make sure a real person filled this out) <span class="text-red-500">*</span></label>
+                    <input type="text" name="referral_writer_name" id="referral_writer_name" required
+                           class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                </div>
+            </div>
+
+            <!-- Final Notes & Instructions -->
+            <div class="p-4 bg-gray-100 rounded-md text-gray-700">
+                <p class="mb-2"><strong>Please send records to:</strong> `records@pawsonwheelsvet.com`</p>
+                <p>Please let your client know it may take 48 hours for us to contact them.</p>
+            </div>
+
+            <!-- Formspree hidden field to prevent redirect and show a success message -->
+            <input type="hidden" name="_next" value="?success=true">
+
+            <!-- Submit Button -->
+            <div>
+                <button type="submit"
+                        class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-150 ease-in-out">
+                    Send Referral
+                </button>
+            </div>
+        </form>
+
+        <!-- Success Message container -->
+        <div id="success-message" class="mt-6 p-4 bg-green-100 text-green-700 rounded-md hidden">
+            <p class="text-center font-medium">Thank you! Your referral has been sent.</p>
+        </div>
+    </div>
+
+    <!-- JavaScript to handle the success message -->
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const params = new URLSearchParams(window.location.search);
+            if (params.get('success') === 'true') {
+                document.getElementById('contact-form').style.display = 'none';
+                document.getElementById('success-message').style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>
